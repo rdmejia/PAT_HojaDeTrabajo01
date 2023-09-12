@@ -18,9 +18,11 @@ int main()
     int numero;
     cout << "Ingrese un número: "; cin >> numero;
 
-    if (esPotenciaDeDos(numero)) {
+    if (esPotenciaDeDos(numero)) 
+    {
         cout << numero << " es una potencia de dos // true " << endl;
-    } else {
+    } else 
+    {
         cout << numero << " no es una potencia de dos // false " << endl;
     }
 
