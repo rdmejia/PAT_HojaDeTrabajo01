@@ -2,12 +2,12 @@
 
 vector<string> Ejercicio04::generateParenthesis(int n)
 {
-    std::vector<std::string> resultado;
-    generarParentesisRecursivo(resultado, "", n, n);
+    vector<string> resultado;
+    parentesisRecur(resultado, "", n, n);
     return resultado;
 }
 
-void generarParentesisRecursivo(vector<string>& resultado, string actual, int abiertos, int cerrados)
+void parentesisRecur(vector<string>& resultado, string actual, int abiertos, int cerrados)
 {
     if (abiertos == 0 && cerrados == 0)
     {
@@ -17,12 +17,12 @@ void generarParentesisRecursivo(vector<string>& resultado, string actual, int ab
 
     if (abiertos > 0)
     {
-        generarParentesisRecursivo(resultado, actual + '(', abiertos - 1, cerrados);
+        parentesisRecur(resultado, actual + '(', abiertos - 1, cerrados);
     }
 
     if (cerrados > abiertos)
     {
-        generarParentesisRecursivo(resultado, actual + ')', abiertos, cerrados - 1);
+        parentesisRecur(resultado, actual + ')', abiertos, cerrados - 1);
     }
 }
 

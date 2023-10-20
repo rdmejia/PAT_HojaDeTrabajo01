@@ -29,4 +29,4 @@ bool Ejercicio03::isPowerOfTwo(int n)
         }
     }
     return isPowerOfTwo(n / 2);
-}
+};
