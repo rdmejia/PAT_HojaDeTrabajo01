@@ -2,31 +2,24 @@
 
 bool Ejercicio02::isPalindrome(string& s)
 {
-    string r =s;
-    r(r.begin.(), r.end());
+    int a = 0;
+    int b = l.length() - 1;
 
-    if (s == r)
+    int con = 0;
+    for (int i = 0; i < l.length();i++)
     {
-        return true;
+        for (int x = 0;x < l.size();x++)
+        {
+            if (l[a] == l[b])
+            {
+                a++;
+                b--;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
-    else 
-    {
-        return false;
-    }
-}
-
-int main ()
-{
-    string palabra;
-    cout <<"ingrese la palabra: "; cin >> palabra 
-
-    if (esPalidromo (palabra))
-    {
-        cout << palabra << "es palidromo "<<endl;
-    }
-    else 
-    {
-        cout << palabra << " no es palidromo "<<endl;
-    }
-    return 0;
+    return true;
 }
