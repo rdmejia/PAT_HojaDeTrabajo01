@@ -1,23 +1,30 @@
 #include "Ejercicio04.h"
 
+vector<string> Ejercicio04::generateParenthesis(int n)
+{
+    std::vector<std::string> resultado;
+    generarParentesisRecursivo(resultado, "", n, n);
+    return resultado;
+}
 
-    void parentesis(string s, int inicio, int final, int n, vector<string> &r) 
+void generarParentesisRecursivo(vector<string>& resultado, string actual, int abiertos, int cerrados)
+{
+    if (abiertos == 0 && cerrados == 0)
     {
-        if (inicio == n && final == n) {
-            r.push_back(s);
-            return;
-        }
-        if (inicio > final) {
-            parentesis(s + ')', inicio, final + 1, n, r);
-        }
-        if (inicio < n) {
-            parentesis(s + '(', inicio + 1, final, n, r);
-        }
+        resultado.push_back(actual);
+        return;
     }
-    vector<string> Ejercicio04::generateParenthesis(int n)
+
+    if (abiertos > 0)
     {
-        vector<string> r;
-        parentesis("", 0, 0, n, r);
-        return r;
+        generarParentesisRecursivo(resultado, actual + '(', abiertos - 1, cerrados);
     }
+
+    if (cerrados > abiertos)
+    {
+        generarParentesisRecursivo(resultado, actual + ')', abiertos, cerrados - 1);
+    }
+}
+
+
 
