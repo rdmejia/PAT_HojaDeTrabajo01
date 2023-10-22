@@ -1,25 +1,28 @@
 #include "Ejercicio04.h"
 
-void generar(string actual, int inicio, int final, int n, vector<string>& resultado)
-{
-    if (inicio == n && final == n) 
+void generate(int n, int abierto, int cerra, string actual, vector<string>& resultado) {
+    if (abierto == n && cerra == n)
     {
         resultado.push_back(actual);
         return;
     }
-    if (inicio > final)
-    {
-        generar(actual + ')', inicio, final + 1, n, resultado);
+
+    if (abierto < n) {
+        actual.append("(");
+        generate(n, abierto + 1, cerra, actual, resultado);
+        actual.pop_back();
     }
-    if (inicio < n) 
-    {
-        generar(actual + '(', inicio + 1, final, n, resultado);
+
+    if (cerra < abierto) {
+        actual.append(")");
+        generate(n, abierto, cerra + 1, actual, resultado);
+        actual.pop_back();
     }
 }
 
-vector<string> Ejercicio04::generarParentesis(int n)
+vector<string> Ejercicio04::generateParenthesis(int n)
 {
-    vector<string> resultado;
-    generarParentesis("", 0, 0, n, resultado);
-    return resultado;
+    vector<string> r;
+    generate(n, 0, 0, "", r);
+    return r;
 }
