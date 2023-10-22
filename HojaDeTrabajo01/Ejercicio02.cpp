@@ -2,27 +2,20 @@
 
 bool Ejercicio02::isPalindrome(string& s)
 {
-
     int p = 0;
     int p2 = s.length() - 1;
 
-    int con = 0;
-    for (int i = 0; i < s.length(); i++)
+    while (p < p2)
     {
-        for (int x = 0; x < s.size(); x++)
+        if (s[p] != s[p2])
         {
-            if (s[p] == s[p2])
-            {
-                p++;
-                p2--;
-            }
-            else
-            {
-                // es palindroma 
-                return false;
-            }
+            // Los caracteres no coinciden, no es un palíndromo
+            return false;
         }
+        p++;
+        p2--;
     }
-    // no es palindroma 
+
+    // Si llegamos aquí, todos los caracteres coinciden, es un palíndromo
     return true;
- }
+}
