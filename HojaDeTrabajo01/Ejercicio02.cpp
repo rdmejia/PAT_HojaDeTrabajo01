@@ -25,4 +25,4 @@ bool Ejercicio02::isPalindrome(string& s)
     }
     // no es palindroma 
     return true;
- };
+ }
