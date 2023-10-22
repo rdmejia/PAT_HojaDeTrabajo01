@@ -1,6 +1,6 @@
 #include "Ejercicio04.h"
 
-void parentesisRecur(vector<string& resultado, string actual, int abiertos, int cerrados)
+void parentesisRecur(vector<string>& resultado, string actual, int abiertos, int cerrados)
 {
     if (abiertos == 0 && cerrados == 0)
     {
@@ -22,7 +22,7 @@ void parentesisRecur(vector<string& resultado, string actual, int abiertos, int 
 vector<string> Ejercicio04::generateParenthesis(int n)
 {
     vector<string> resultado;
-    parentesisRecur(resultado, "", n, n);
+    parentesisRecur(resultado, n, 0, 0, "");
     return resultado;
 }
 
