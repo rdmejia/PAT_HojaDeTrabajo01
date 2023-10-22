@@ -9,6 +9,6 @@ using std::string;
 class Ejercicio04
 {
 public:
-	vector<string> generateParenthesis(int n);
+	void parentesisRecur(vector<string> &resultado, string actual, int abiertos, int cerrados);
 };
 
