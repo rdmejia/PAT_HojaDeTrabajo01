@@ -1,6 +1,6 @@
 #include "Ejercicio04.h"
 
-void parentesisRecur(vector<string>& resultado, string actual, int abiertos, int cerrados)
+void parentesisRecur(vector<string& resultado, string actual, int abiertos, int cerrados)
 {
     if (abiertos == 0 && cerrados == 0)
     {
