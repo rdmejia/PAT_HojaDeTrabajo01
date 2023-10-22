@@ -9,6 +9,5 @@ using std::string;
 class Ejercicio04
 {
 public:
-	vector<string> generateParenthesis(int n);
+vector<string> generateParenthesis(int n);
 };
-
