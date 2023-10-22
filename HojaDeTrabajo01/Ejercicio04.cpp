@@ -1,30 +1,27 @@
 #include "Ejercicio04.h"
 
-void parentesisRecur(vector<string>& resultado, string actual, int abiertos, int cerrados)
+void parentesisRecur(vector<string>& resultado, string actual, int abiertos, int cerrados, int n)
 {
-    if (abiertos == 0 && cerrados == 0)
+    if (abiertos == n && cerrados == n)
     {
         resultado.push_back(actual);
         return;
     }
 
-    if (abiertos > 0)
+    if (abiertos > n)
     {
-        parentesisRecur(resultado, actual + '(', abiertos - 1, cerrados);
+        parentesisRecur(actual + '(', abiertos, cerrados + 1, actual, resultado);
     }
 
-    if (cerrados > abiertos)
+    if (cerrados < abiertos)
     {
-        parentesisRecur(resultado, actual + ')', abiertos, cerrados - 1);
+        parentesisRecur(actual + ')', abiertos + 1, cerrados, actual, resultado);
     }
 }
 
 vector<string> Ejercicio04::generateParenthesis(int n)
 {
     vector<string> resultado;
-    parentesisRecur(resultado, n, 0, 0, "");
+    parentesisRecur( n, 0, 0, "", resultado);
     return resultado;
 }
-
-
-
