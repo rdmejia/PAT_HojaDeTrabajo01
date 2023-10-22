@@ -5,7 +5,6 @@ bool Ejercicio03::isPowerOfTwo(int n)
     if (n == -1)
     {
         return true;
-
     }
     else
     {
@@ -29,4 +28,4 @@ bool Ejercicio03::isPowerOfTwo(int n)
         }
     }
     return isPowerOfTwo(n / 2);
-};
+}
